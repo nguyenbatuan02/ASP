@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form view -->
+    <record id="asp_brand_form_view" model="ir.ui.view">
+        <field name="name">asp.brand.form</field>
+        <field name="model">asp.brand</field>
+        <field name="arch" type="xml">
+            <form string="Thương hiệu">
+                <sheet>
+                    <field name="image_128" widget="image"
+                           class="oe_avatar"
+                           options="{'preview_image': 'image_128', 'size': [128,128]}"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="Tên thương hiệu"/></h1>
+                    </div>
+                    <group>
+                        <field name="description"/>
+                        <field name="product_count" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List view -->
+    <record id="asp_brand_list_view" model="ir.ui.view">
+        <field name="name">asp.brand.list</field>
+        <field name="model">asp.brand</field>
+        <field name="arch" type="xml">
+            <list string="Thương hiệu">
+                <field name="image_128" widget="image" optional="show"/>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="product_count"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="asp_brand_action" model="ir.actions.act_window">
+        <field name="name">Thương hiệu</field>
+        <field name="res_model">asp.brand</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem
+        id="asp_brand_menu"
+        name="Thương hiệu"
+        parent="stock.menu_stock_config_settings"
+        action="asp_brand_action"
+        sequence="20"/>
+</odoo>

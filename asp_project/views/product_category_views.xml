@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_category_form_inherit" model="ir.ui.view">
+        <field name="name">product.category.form.inherit.asp</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <!-- Thêm field ảnh vào đầu form, trước field "Name" -->
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="image_128"
+                       widget="image"
+                       class="oe_avatar"
+                       options="{'preview_image': 'image_128', 'size': [128, 128]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
