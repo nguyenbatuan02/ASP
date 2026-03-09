@@ -7,6 +7,9 @@
         <field name="arch" type="xml">
             <!-- Thêm brand_id cạnh categ_id -->
             <xpath expr="//field[@name='categ_id']" position="after">
+                <field name="group_id"/>
+                <field name="global_code"/>
+                <field name="alternative_product_ids" widget="many2many_tags"/>
                 <field name="brand_id"/>
             </xpath>
         </field>

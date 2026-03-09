@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_asp_brand_user,asp.brand.user,model_asp_brand,base.group_user,1,0,0,0
 access_asp_brand_manager,asp.brand.manager,model_asp_brand,stock.group_stock_manager,1,1,1,1
+access_product_group,access_product_group,model_product_group,,1,1,1,1
